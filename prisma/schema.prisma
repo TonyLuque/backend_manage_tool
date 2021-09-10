@@ -19,4 +19,16 @@ model User {
   password String
   createdAt DateTime @default(now())
   modifiedAt DateTime? @updatedAt
+  devices Device[]
+}
+
+model Device {
+  id String @id @default(uuid())
+  serial String @unique
+  name String
+  type String
+  operativeSystem String
+  assignedAt DateTime
+  owner User @relation(fields:[ownerId], references:[id])
+  ownerId String
 }
