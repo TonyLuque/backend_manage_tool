@@ -1,8 +1,9 @@
 type Device {
   id: ID!
-  seria: String!
+  serial: String!
   name: String
   type: String
   opertativeSystem: String
   assignedAt: String
+  owner: User
 }

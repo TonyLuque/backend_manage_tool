@@ -6,4 +6,5 @@ type User {
   role: String
   createdAt: String
   modifiedAt: String
+  devices: [Device]
 }

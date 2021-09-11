@@ -6,6 +6,7 @@ const { getUserId } = require("./utils");
 const Query = require("./resolvers/Query");
 const Mutation = require("./resolvers/Mutation");
 const User = require("./user/User");
+const Device = require("./device/Device");
 
 const fs = require("fs");
 const path = require("path");
@@ -15,6 +16,7 @@ const resolvers = {
   Query,
   Mutation,
   User,
+  Device,
 };
 
 // 3

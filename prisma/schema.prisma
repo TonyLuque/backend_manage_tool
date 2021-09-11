@@ -33,7 +33,7 @@ model Device {
   name            String
   type            String
   operativeSystem String
-  assignedAt      DateTime
+  assignedAt      DateTime @default(now())
   owner           User     @relation(fields: [ownerId], references: [id])
   ownerId         String
 }
