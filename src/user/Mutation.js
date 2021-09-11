@@ -8,7 +8,7 @@ async function signup(parent, args, context, info) {
 
   // 2
   const user = await context.prisma.user.create({
-    data: { ...args, password },
+    data: { ...args, password, role: "ADMIN" },
   });
 
   // 3
@@ -56,8 +56,15 @@ async function post(parent, args, context, info) {
   });
 }
 
+async function createUser(parent, args, context, info) {
+  return await context.prisma.user.create({
+    data: { ...args },
+  });
+}
+
 module.exports = {
   signup,
   login,
   post,
+  createUser,
 };

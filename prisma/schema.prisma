@@ -10,25 +10,30 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
 model User {
-  id String @id @default(uuid())
-  name String
-  lastname String
-  email String  @unique
-  password String
-  createdAt DateTime @default(now())
+  id         String    @id @default(uuid())
+  name       String
+  lastname   String
+  email      String    @unique
+  password   String?
+  role       Role      @default(USER)
+  createdAt  DateTime  @default(now())
   modifiedAt DateTime? @updatedAt
-  devices Device[]
+  devices    Device[]
+}
+
+enum Role {
+  USER
+  ADMIN
 }
 
 model Device {
-  id String @id @default(uuid())
-  serial String @unique
-  name String
-  type String
+  id              String   @id @default(uuid())
+  serial          String   @unique
+  name            String
+  type            String
   operativeSystem String
-  assignedAt DateTime
-  owner User @relation(fields:[ownerId], references:[id])
-  ownerId String
+  assignedAt      DateTime
+  owner           User     @relation(fields: [ownerId], references: [id])
+  ownerId         String
 }

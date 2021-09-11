@@ -1,0 +1,8 @@
+type Device {
+  id: ID!
+  seria: String!
+  name: String
+  type: String
+  opertativeSystem: String
+  assignedAt: String
+}
