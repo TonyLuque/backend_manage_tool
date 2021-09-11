@@ -1,4 +1,12 @@
+const { getDeviceById } = require("../../utils/fakeApi");
+
 async function assignDevice(parent, args, context, info) {
+  const data = getDeviceById(args.serial);
+
+  if (data === undefined) {
+    throw new Error("El dispositivo no esta registrado en el sistema");
+  }
+
   const device = await context.prisma.device.findUnique({
     where: {
       serial: args.serial,
@@ -11,9 +19,9 @@ async function assignDevice(parent, args, context, info) {
   return await context.prisma.device.create({
     data: {
       serial: args.serial,
-      name: args.deviceName,
-      type: args.deviceType,
-      operativeSystem: args.deviceOS,
+      name: data.name,
+      type: data.type,
+      operativeSystem: data.OS,
       owner: { connect: { id: args.idAssignedUser } },
     },
   });

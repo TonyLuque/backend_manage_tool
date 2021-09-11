@@ -12,13 +12,7 @@ type Mutation {
   ): AuthPayload
   login(email: String!, password: String!): AuthPayload
   createUser(name: String!, lastname: String!, email: String!): User
-  assignDevice(
-    serial: String!
-    deviceName: String!
-    deviceType: String!
-    deviceOS: String!
-    idAssignedUser: String!
-  ): Device
+  assignDevice(serial: String!, idAssignedUser: String!): Device
 }
 
 type AuthPayload {
