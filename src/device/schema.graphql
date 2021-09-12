@@ -3,7 +3,7 @@ type Device {
   serial: String!
   name: String
   type: String
-  opertativeSystem: String
+  operativeSystem: String
   assignedAt: String
   owner: User
 }
