@@ -1,6 +1,6 @@
 type Device {
   id: ID!
-  serial: String!
+  serial: String
   name: String
   type: String
   operativeSystem: String
