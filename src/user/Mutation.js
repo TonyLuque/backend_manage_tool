@@ -45,6 +45,8 @@ async function login(parent, args, context, info) {
 }
 
 async function createUser(parent, args, context, info) {
+  const { userId } = context;
+
   return await context.prisma.user.create({
     data: { ...args },
   });

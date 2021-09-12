@@ -1,6 +1,7 @@
 type Query {
   getUsers: [User]
   getDevices: [Device]
+  getDeviceBySerial(serial: String!): Device
 }
 
 type Mutation {
