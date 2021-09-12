@@ -27,6 +27,13 @@ const server = new ApolloServer({
     fs.readFileSync(path.join(__dirname, "./device/schema.graphql"), "utf8"),
   ],
   resolvers,
+  dataSources: () => ({}),
+  introspection: true,
+  cors: {
+    origin: true,
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  },
   context: ({ req }) => {
     return {
       ...req,
