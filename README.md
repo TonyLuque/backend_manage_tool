@@ -23,3 +23,7 @@ Debes tener instalado Postgres y configurar la variable de entorno como se muest
 ## Con que esta hecho
 
 Se uso NodeJS, Graphql y Prisma para la creación de este proyecto.
+
+# Nota:
+
+Aunque puedes probar los endpoints desde el panel de GrapqhQL, existe un proyecto de Front con el que puedes integrarlo [acá](https://github.com/TonyLuque/front_manage_tool)
