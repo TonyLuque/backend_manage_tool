@@ -12,8 +12,19 @@ async function assignDevice(parent, args, context, info) {
       serial: args.serial,
     },
   });
+
   if (device !== null) {
     throw new Error("EL dispositivo ya esta asignado");
+  }
+
+  const user = await context.prisma.user.findUnique({
+    where: {
+      id: args.idAssignedUser,
+    },
+  });
+
+  if (user === null) {
+    throw new Error("El usuario no existe.");
   }
 
   return await context.prisma.device.create({
