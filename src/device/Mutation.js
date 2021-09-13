@@ -21,7 +21,7 @@ async function assignDevice(parent, args, context, info) {
       serial: args.serial,
       name: data.name,
       type: data.type,
-      operativeSystem: data.OS,
+      operativeSystem: data.operativeSystem,
       owner: { connect: { id: args.idAssignedUser } },
     },
   });
