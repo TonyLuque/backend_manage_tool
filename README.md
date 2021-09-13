@@ -27,3 +27,32 @@ Se uso NodeJS, Graphql y Prisma para la creación de este proyecto.
 # Nota:
 
 Aunque puedes probar los endpoints desde el panel de GrapqhQL, existe un proyecto de Front con el que puedes integrarlo [acá](https://github.com/TonyLuque/front_manage_tool)
+
+# Nota 2:
+
+En el proyecto se simula la consulta de una API externa para verificar que el serial del dispositivo exista o este registrado.
+Esto se hace en el archivo `fakeApi.js`
+
+Los seriales que se pueden registrar son:
+
+- "1234561"
+
+- "1234562"
+
+- "1234563"
+
+- "1234564"
+
+- "1234565"
+
+- "1234566"
+
+- "1234567"
+
+- "1234568"
+
+- "1234569"
+
+- "1234560"
+
+- "1234571"
