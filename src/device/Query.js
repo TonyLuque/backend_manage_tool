@@ -1,12 +1,14 @@
 const { getDeviceById } = require("../../utils/fakeApi");
+const { authUser } = require("../utils");
 
 async function getDevices(parent, args, context, info) {
-  const { userId } = context;
+  authUser(context);
+
   return await context.prisma.device.findMany();
 }
 
 async function getDeviceBySerial(parent, args, context, info) {
-  const { userId } = context;
+  authUser(context);
   const deviceAPI = getDeviceById(args.serial);
 
   const deviceBD = await context.prisma.device.findUnique({

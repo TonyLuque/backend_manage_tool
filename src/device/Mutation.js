@@ -1,6 +1,9 @@
 const { getDeviceById } = require("../../utils/fakeApi");
+const { authUser } = require("../utils");
 
 async function assignDevice(parent, args, context, info) {
+  authUser(context);
+
   const data = getDeviceById(args.serial);
 
   if (data === undefined) {

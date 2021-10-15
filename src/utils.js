@@ -24,7 +24,16 @@ function getUserId(req, authToken) {
   throw new Error("Not authenticated");
 }
 
+function authUser(context) {
+  const { userId } = context;
+  if (userId === null) {
+    throw new Error("Not authenticated");
+  }
+  return userId;
+}
+
 module.exports = {
   APP_SECRET,
   getUserId,
+  authUser,
 };
