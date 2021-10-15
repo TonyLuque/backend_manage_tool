@@ -9,7 +9,7 @@ En este repositorio encontraras el backend de un modulo para el sistema de regis
 - **createUser**: Permite la creación de usurios no administradores
 - **assignDevice**: Permite asignar un dispositivo a un usuario
 - **getUsers**: Devuelve todos los usuarios en el sistema con sus dispositivos asignados
-- **getDevices**: Devulve todos los dispositivos en el sistema con sus propietarios
+- **getDevices**: Devuelve todos los dispositivos en el sistema con sus propietarios
 
 ## Como ejecutarlo
 
